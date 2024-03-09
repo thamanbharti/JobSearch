@@ -1,0 +1,43 @@
+.card{
+    height: 300px;
+    width: 250px;
+    /* border: solid ; */
+     box-shadow: 4px 2px rgb(73, 73, 73);
+    border-width: 2px;
+    background-color: white;
+    border-radius: 5px;
+    float: left;
+    margin-left: 10px;
+}
+.card:nth-child(1)
+{
+    margin-left: 10px;
+}
+
+
+.card:nth-child(2)
+{
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+.card:nth-child(3)
+{
+    margin-left: 10px;
+}
+.card-container{
+   
+    height: 400px;
+    margin-left: 10%;
+    width: 80%;
+    /* border: solid; */
+    padding-left:140px ;
+    margin-top: 60px;
+
+}
+
+.description{
+    height: 40%;
+    width: 100%;
+    /* border: solid; */
+}
