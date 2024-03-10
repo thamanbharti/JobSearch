@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
+import { useNavigate } from 'react-router-dom';
 export default function Login() {
     const [userDetails, setUser] = useState({
         username: "",
        
         password: ""
       });
-    
+      const navigate=useNavigate();
       const [isLoading, setLoading] = useState(false);
     
      
@@ -42,7 +43,7 @@ export default function Login() {
               <input type="password" className="login__input" placeholder="Password" onChange={(e) => passwordHandler(e)} />
             </div>
             <button className="button login__submit">
-              <span className="button__text" >Sign In</span>
+              <span className="button__text">Sign In</span>
               <i className="button__icon fas fa-chevron-right"></i>
             </button>
           </form>

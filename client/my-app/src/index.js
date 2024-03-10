@@ -7,18 +7,22 @@ import { RouterProvider,createBrowserRouter } from 'react-router-dom';
 import Register from './register';
 import Home from './Home';
 import Login from './Login';
+import FieldSelector from './FieldSelector';
 
 
 
 const router=createBrowserRouter([{
   path:'/',
-  element:<Home/>
+  element:<App/>
 },{
   path:'/signup',
   element:<Register/>
 },{
   path:'/login',
   element:<Login/>
+},{
+  path:'/interest',
+  element:<FieldSelector/>
 }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));

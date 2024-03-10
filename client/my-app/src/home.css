@@ -9,21 +9,42 @@
     float: left;
     margin-left: 10px;
 }
+.card:hover{
+    
+    cursor: pointer;
+}
 .card:nth-child(1)
 {
     margin-left: 10px;
+    animation: move 2s 0s 2 ;
 }
+
+@keyframes move {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+         transform: translateY(20px);
+    }
+    100%{
+        transform: translateY(0);
+   }
+}
+
+
 
 
 .card:nth-child(2)
 {
     margin-left: 10px;
     margin-top: 40px;
+    animation: move 2s 4s 2;
 }
 
 .card:nth-child(3)
 {
     margin-left: 10px;
+    animation: move 2s 8s 2;
 }
 .card-container{
    
