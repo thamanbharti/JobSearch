@@ -22,3 +22,4 @@ This project is a Job Search Platform that facilitates the process of job searci
 -Thaman Bharti 
 -Shubham Rajak
 -Swarn pratap singh
+-Sudhanshu Ranjan
