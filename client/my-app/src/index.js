@@ -8,6 +8,7 @@ import Register from './register';
 import Home from './Home';
 import Login from './Login';
 import FieldSelector from './FieldSelector';
+import Main from './Main';
 
 
 
@@ -23,6 +24,10 @@ const router=createBrowserRouter([{
 },{
   path:'/interest',
   element:<FieldSelector/>
+}
+,{
+  path:'/main',
+  element:<Main/>
 }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));

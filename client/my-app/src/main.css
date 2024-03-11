@@ -1,0 +1,123 @@
+.search-bar{
+    /* float: right; */
+    width: 50vw;
+    height: 6vh;
+   margin-left: 11vw;
+    border-radius: 5px;
+    color: purple;
+    font-weight: bold;
+    font-size: large;
+    position: fixed;
+    z-index: 100;
+}
+.search-bar:hover{
+    animation: enlarge  1s 1 ;
+    cursor: pointer;
+}
+
+@keyframes enlarge {
+    0%{
+        transform: translateY(2px) scale(1);
+    }
+    100%{
+        transform: 
+       translateY(0) scale(1.01);
+    }
+}
+.logo-sec{
+    width: max-content;
+    position: relative;
+    float: right; 
+     margin-right: 15vw;
+   align-items: center;
+}
+
+.filter-box {
+    border: solid;
+    width: 50vw;
+    border-width: 2px;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-left: 28.5vw;
+    z-index: 103;
+    animation: appear 1s forwards;
+}
+
+.job-card{
+  border: solid;
+  max-width: 48vw;
+  min-height: 20vh;
+  border-width: 1px;
+  border-radius: 3px;
+  margin-top: 5px;
+  padding: 2px 2px 2px;
+ /* transform: translateX(29vw); */
+  z-index: -1;
+}
+
+.card-container-1{
+ transform: translateX(28.5vw);
+ width: 50vw;
+ padding-left: 4px;
+ margin-top: 10px;
+ /* border: solid; */
+ background-color: whitesmoke;
+ height: 100vh;
+ border-radius: 2px;
+ position:absolute;
+ overflow-y: scroll;
+ scroll-behavior: smooth;
+ align-items: center;
+}
+  
+  @keyframes appear {
+    0% {
+      
+      transform: translateY(5px) scale(0.9); /* Initial state: slightly scaled and invisible */
+    }
+    100% {
+      /* opacity: 1; */
+      
+      transform: translateY(0) scale(1); /* Final state: fully visible and normal scale */
+    }
+  }
+  
+  
+  .icon {
+    margin-right: 15px;
+  }
+
+  .details {
+    flex: 1;
+  }
+
+  .company-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .company-name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  .job-role {
+    font-size: 1.1em;
+    margin-top: 5px;
+  }
+
+  .job-description {
+    margin-top: 10px;
+  }
+
+  .apply-button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transform: translateX(5px);
+  }
+ 
