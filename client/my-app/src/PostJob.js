@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaGlobeAmericas } from "react-icons/fa";
 import './postjob.css'
+import NavBar from './Navbar';
 export default function PostJob() {
     const [jobdetails,setJobdetails]=useState({
         company:"",
@@ -26,14 +27,7 @@ export default function PostJob() {
 
   return (
     <div className='container'>
-       <h1 >
-        &nbsp;&nbsp;CareerGrow{' '}<FaGlobeAmericas color='purple'/>
-        <input className='search-bar' placeholder='search' />
-        <span className='logo-sec' >
-        {/* <FaFilter size={18} style={{cursor:'pointer',marginRight:'40px',marginBottom:'5px'}} onClick={toggleFilterBox}/> */}
-          
-        </span>
-      </h1>
+      <NavBar/>
      <div className='job-applicant'>
         <h2>Applicants</h2>
         <div  className='applicant-card'>

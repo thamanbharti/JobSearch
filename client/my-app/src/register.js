@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import './login.css';
+import { FaGlobeAmericas } from "react-icons/fa";
+
 import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
@@ -56,10 +58,10 @@ export default function Register() {
       <div className="screen" >
 
         <div className="screen__content">
-        <h1 style={{color:'black',textAlign:'center'}}>Career<span style={{color:'violet'}}>Grow</span></h1>
+        <h1 style={{color:'black',textAlign:'center'}}>CareerGrow<FaGlobeAmericas color='purple'/></h1>
           
           <form className="login"  onSubmit={(e) => postUser(e)}>
-          {/* {isLoading?<CircularProgress style={{zIndex:'1000',marginLeft:'200px'}}/>:""}  */}
+          {isLoading?<CircularProgress style={{zIndex:'1000',marginLeft:'200px'}}/>:""} 
             <div className="login__field">
               <i className="login__icon fas fa-user"></i>
               <input type="text" className="login__input" placeholder=" Email" onChange={(e) => emailHandler(e)} />

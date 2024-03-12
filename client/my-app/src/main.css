@@ -39,7 +39,12 @@
     border-radius: 3px;
     margin-top: 5px;
     margin-left: 28.5vw;
+    transform: translateX(28.5vw);
+    list-style-type: none;
+    background-color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     z-index: 103;
+    height: max-content;
     animation: appear 1s forwards;
 }
 
