@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { GiSupersonicArrow } from "react-icons/gi";
 import { LoremIpsum } from 'react-lorem-ipsum'
 import { PiGlobeStandFill } from "react-icons/pi";
+import { FaGlobeAmericas } from "react-icons/fa";
 import { BsPersonWorkspace } from "react-icons/bs";
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
@@ -12,7 +13,7 @@ export default function Home() {
     const navigate=useNavigate();
   return (
     <div className="container">
-        <div className='description' ><h1 style={{marginLeft:'45%'}}>CareerGrow
+        <div className='description' ><h1 style={{marginLeft:'45%'}}>CareerGrow<FaGlobeAmericas color='purple'/>
         <span>
         <ButtonGroup variant="contained" aria-label="Basic button group" style={{float:'right',borderRadius:'20px',marginRight:'10px',marginTop:'10px'}}>
       <Button style={{backgroundColor:'purple'}} onClick={()=>{navigate('/login')}}>Login</Button>

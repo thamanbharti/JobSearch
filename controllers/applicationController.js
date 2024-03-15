@@ -2,6 +2,7 @@
 
 const userModel = require("../models/userModel");
 const applicationModel = require("../models/applicationModel");
+const resumeUploadModel = require("../models/resumeUploadModel");
 
 //CREATE INVENTORY
 const createApplicationController = async (req, res) => {
@@ -41,7 +42,7 @@ const createApplicationController = async (req, res) => {
 //get all Application records
 const getApplicationController = async (req, res) => {
     try {
-        const application = await applicationModel.find().sort({ createdAt: -1 });
+        const application = await applicationModel.find();
         return res.status(200).send({
             success: true,
             message: "get all records succesfully",
@@ -96,8 +97,27 @@ const getFilterControlle = async (req, res) => {
         res.status(500).send('Server Error');
     }
 };
-
+const getResume = async (req, res) => {
+    try {
+        // const post_id = "65ef51f27e3f0253e0655164";
+        const post_id = req.params.postedBy;
+        console.log(post_id)
+        const resumeDetail = await resumeUploadModel.find({ postBy: post_id });
+        // console.log(resumeDetail)
+        return res.status(200).send({
+            success: true,
+            message: "get all filtered succesfully",
+            resumeDetail,
+        })
+    } catch (error) {
+        return res.status(500).send({
+            success: false,
+            message: "failed to fetch data",
+            error,
+        })
+    }
+}
 
 module.exports = {
-    createApplicationController, getApplicationController, getFilterControlle
+    createApplicationController, getApplicationController, getFilterControlle, getResume
 }

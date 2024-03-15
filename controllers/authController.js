@@ -45,20 +45,21 @@ const loginController = async (req, res) => {
             return res.status(404).send({
                 success: false,
                 message: 'Invalid Credential',
-
+                userDetails: user._id
 
             })
         }
         //role
-        if (user.role !== req.body.role) {
-            return res.status(500).send({
-                success: false,
-                message: 'role doesnt match',
-            })
-        }
+        // if (user.role !== req.body.role) {
+        //     return res.status(500).send({
+        //         success: false,
+        //         message: 'role doesnt match',
+        //     })
+        // }
         //compare password
         const comparePassword = await bcrypt.compare(req.body.password, user.password);
         if (!comparePassword) {
+            console.log("wrong")
             return res.status(500).send({
                 success: false,
                 message: 'Invalid Credentials'
@@ -105,5 +106,7 @@ const currentUserController = async (req, res) => {
         })
     }
 };
+
+// get resume 
 
 module.exports = { registerController, loginController, currentUserController };

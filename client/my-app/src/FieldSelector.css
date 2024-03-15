@@ -11,13 +11,13 @@
 }
 
 .field-1{
-    border: solid;
-    width: 15vw;
-    height: 8vh;
-    box-shadow: 4px 2px rgb(73, 73, 73);
-    border-width: 2px;
-    background-color: white;
-    border-radius: 5px;
+    /* border: solid; */
+    /* width: 15vw;
+    height: 8vh; */
+    /* box-shadow: 4px 2px rgb(73, 73, 73);
+    border-width: 2px; */
+    /* background-color: white; */
+    /* border-radius: 5px; */
     float: right;
     margin-right: 40px;
     list-style: none;

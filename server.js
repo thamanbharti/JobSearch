@@ -22,6 +22,33 @@ app.use("/api/v1/test", require("./routes/testRoutes"));
 app.use("/api/v1/auth", require("./routes/authRoutes"));
 app.use("/api/v1/application", require("./routes/applicationRoutes"));
 
+
+// const multer = require('multer');
+
+
+
+
+// // Multer configuration
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, "./files");
+//     },
+//     filename: function (req, file, cb) {
+//         const uniqueSuffix = Date.now();
+//         cb(null, uniqueSuffix + '-' + file.originalname);
+//     },
+// });
+
+// const upload = multer({ storage: storage });
+
+// // Route for uploading resumes
+// app.post("/upload-files", upload.single("file"), async (req, res) => {
+//     console.log(req.file);
+// })
+// // // module.exports = router;
+
+app.use("/api/v1/application", require("./routes/resumeUploadRoutes"));
+
 //port 
 const PORT = 8080
 //listen

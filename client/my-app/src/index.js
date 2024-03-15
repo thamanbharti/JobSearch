@@ -3,34 +3,46 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { RouterProvider,createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Register from './register';
 import Home from './Home';
 import Login from './Login';
 import FieldSelector from './FieldSelector';
+import Main from './Main';
+import PostJob from './PostJob';
 
 
 
-const router=createBrowserRouter([{
-  path:'/',
-  element:<App/>
-},{
-  path:'/signup',
-  element:<Register/>
-},{
-  path:'/login',
-  element:<Login/>
-},{
-  path:'/interest',
-  element:<FieldSelector/>
+const router = createBrowserRouter([{
+  path: '/',
+  element: <App />
+}, {
+  path: '/signup',
+  element: <Register />
+}, {
+  path: '/login',
+  element: <Login />
+}, {
+  path: '/interest',
+  element: <FieldSelector />
 }
+  , {
+  path: '/main',
+  element: <Main />
+},
+{
+  path: '/postJob',
+  element: <PostJob />
+}
+
+
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
-    
+    <RouterProvider router={router} />
+
   </React.StrictMode>
 );
 

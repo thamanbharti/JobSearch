@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress';
 import './login.css';
+import { FaGlobeAmericas } from "react-icons/fa";
+
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+  const navigate=useNavigate();
   const [userDetails, setUser] = useState({
     username: "",
     email: "",
@@ -23,11 +28,28 @@ export default function Register() {
     setUser({ ...userDetails, password: e.target.value });
   };
 
-  useEffect(()=>{
-      setLoading(true);
-      setTimeout(()=>setLoading(false),3000);
-  },[setLoading])
  
+ 
+  const postUser = (e) => {
+    e.preventDefault(); 
+    setLoading(true);
+    console.log(userDetails)
+    axios.post('http://localhost:8080/api/v1/auth/register', userDetails)
+      .then((res) => {
+        if(res.data.success===true)
+        navigate('/login');
+        console.log(res.data.message);
+      })
+      .catch((err) => {
+        console.error(err);
+        // setError("Registration failed. Please try again."); // Set error state
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+  
+  
 
 
 
@@ -36,9 +58,9 @@ export default function Register() {
       <div className="screen" >
 
         <div className="screen__content">
-        <h1 style={{color:'black',textAlign:'center'}}>Career<span style={{color:'violet'}}>Grow</span></h1>
+        <h1 style={{color:'black',textAlign:'center'}}>CareerGrow<FaGlobeAmericas color='purple'/></h1>
           
-          <form className="login">
+          <form className="login"  onSubmit={(e) => postUser(e)}>
           {isLoading?<CircularProgress style={{zIndex:'1000',marginLeft:'200px'}}/>:""} 
             <div className="login__field">
               <i className="login__icon fas fa-user"></i>
@@ -52,8 +74,8 @@ export default function Register() {
               <i className="login__icon fas fa-lock"></i>
               <input type="password" className="login__input" placeholder="Password" onChange={(e) => passwordHandler(e)} />
             </div>
-            <button className="button login__submit">
-              <span className="button__text" >SignUp Now</span>
+            <button className="button login__submit" >
+              <span className="button__text" type="submit" onSubmit={(e)=>postUser(e)}>SignUp Now</span>
               <i className="button__icon fas fa-chevron-right"></i>
             </button>
           </form>
