@@ -8,9 +8,10 @@ export default function PostJob() {
         eligibility:"",
         roles:"",
         postedby:"",
-        description:""
+        description:"",
+        
     })
-
+ 
     const setCompany=(e)=>{
         setJobdetails({...jobdetails,company:e.target.value});
     }
@@ -21,6 +22,7 @@ export default function PostJob() {
         setJobdetails({...jobdetails,roles:e.target.value});
     }
     const setDescription=(e)=>{
+        
         setJobdetails({...jobdetails,description:e.target.value});
     }
 
