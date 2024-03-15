@@ -1,6 +1,7 @@
 const userModel = require("../models/userModel");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const FavouriteModel = require("../models/FavouriteModel");
 const registerController = async (req, res) => {
     try {
         const exisitingUser = await userModel.findOne({ email: req.body.email })
@@ -92,10 +93,11 @@ const loginController = async (req, res) => {
 const currentUserController = async (req, res) => {
     try {
         const user = await userModel.findOne({ _id: req.body.userId })
+        const userFavourites=await FavouriteModel.find({_id:req.body.userId})
         return res.status(200).send({
             success: true,
             message: "user Feched Succesfully",
-            user
+            userData:{user,userFavourites}
         })
     } catch (error) {
         console.log(error)

@@ -1,0 +1,80 @@
+.profile-upper{
+    height: 30vh;
+    width: 100%;
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    background-position: center 35%; /* You can adjust these values */
+    background-image: url('https://cdn.icon-icons.com/icons2/3088/PNG/512/user_profile_rating_icon_191400.png');
+}
+
+.profile-lower{
+    height: max-content;
+    border: solid 1px;
+    width: 100%;
+    padding: 60px 10px 10px 10px;
+}
+
+.name{
+    width: 60px;
+    display: block;
+    height: 4vh;
+    text-align: center;
+    /* padding: 8px 12px; */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding-top: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size:small;
+}
+
+.edit-name{
+    display: block;
+    transform: translateX(20px);
+    margin: 10px 10px 10px 10px ;
+}
+
+.name,
+.edit-name,
+.fav {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid #2980b9;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit-name {
+  background-color: #2ecc71;
+  border-color: #27ae60;
+  display: block;
+  width: 40vw;
+  height: 5vh;
+}
+
+.fav-container{
+    height: max-content;
+    width: 100%;
+    border-radius: 4px;
+    /* border: solid; */
+    border-width: 1px;
+    justify-content: center;
+    align-items: center;
+    /* padding-bottom: 15px; */
+}
+
+#favorites {
+    
+    padding: 10px;
+    background-color: #d3cfcf;
+    /* border: .5px solid #ddd; */
+    border-radius: 5px;
+    height: 50%;
+  }

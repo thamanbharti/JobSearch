@@ -19,6 +19,9 @@ export default function Login() {
             if(res.data.success===true)
             {
               setLoading(false)
+              console.log(res.data)
+              const userId=res.data.user._id
+              localStorage.setItem('userId',userId);
               navigate('/main');
             }
             console.log(res.data);
@@ -51,7 +54,7 @@ export default function Login() {
            
             <div className="login__field">
               <i className="login__icon fas fa-user"></i>
-              <input type="text" className="login__input" placeholder="UserName" onChange={(e) => userHandler(e)} />
+              <input type="text" className="login__input" placeholder="Email" onChange={(e) => userHandler(e)} />
             </div>
             <div className="login__field">
               <i className="login__icon fas fa-lock"></i>

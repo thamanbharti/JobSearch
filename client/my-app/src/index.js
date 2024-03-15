@@ -9,8 +9,9 @@ import Home from './Home';
 import Login from './Login';
 import FieldSelector from './FieldSelector';
 import Main from './Main';
-
-
+import Profile from './Profile';
+import PostJob from './PostJob';
+import Company from './Company';
 
 const router=createBrowserRouter([{
   path:'/',
@@ -28,6 +29,17 @@ const router=createBrowserRouter([{
 ,{
   path:'/main',
   element:<Main/>
+},{
+  path:'/profile',
+  element:<Profile/>
+},
+{
+  path:'/postjob',
+  element:<PostJob/>
+},
+{
+  path:'/company',
+  element:<Company/>
 }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));

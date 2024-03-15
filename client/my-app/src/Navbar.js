@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
+import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -17,7 +18,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { FaGlobeAmericas } from "react-icons/fa";
 import { FaFilter } from "react-icons/fa";
-
+import { Avatar } from '@mui/material';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -60,7 +61,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar({toggleFilterBox}) {
+export default function NavBar({filterdata}) {
+  const {Filter,toggleFilterBox,handleSearchData}=filterdata;
+  
+  const navigate=useNavigate();
+  const [search,SetSearch]=React.useState("");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -75,14 +80,29 @@ export default function NavBar({toggleFilterBox}) {
     setMobileMoreAnchorEl(null);
   };
 
+  const handleSearch=(e)=>{
+       SetSearch(e.target.value);
+    }
+
+
   const handleMenuClose = () => {
     setAnchorEl(null);
+    console.log(Filter)
+   
     handleMobileMenuClose();
   };
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+
+  const handlekeypress=(e)=>{
+    if(e.key==='Enter')
+    {
+        handleSearchData(search);
+    }
+  }
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -101,8 +121,8 @@ export default function NavBar({toggleFilterBox}) {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}><u onClick={()=>navigate('/profile')}>Profile</u></MenuItem>
+      <MenuItem onClick={handleMenuClose}>Home</MenuItem>
     </Menu>
   );
 
@@ -153,13 +173,13 @@ export default function NavBar({toggleFilterBox}) {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+        {/* <p onClick={()=>navigate('/profile')}>Profile</p> */}
       </MenuItem>
     </Menu>
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} >
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -184,11 +204,19 @@ export default function NavBar({toggleFilterBox}) {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+               onChange={(e)=>handleSearch(e)}
+               onKeyDown={handlekeypress}
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ width: 16 }} />
+          {Filter && (
+            <Typography variant="body2" sx={{ color: 'purple' ,fontWeight:'bold',fontSize:'medium'}}>
+              Filter : {Filter}
+            </Typography>
+          )}
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
@@ -213,7 +241,8 @@ export default function NavBar({toggleFilterBox}) {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              {/* <AccountCircle /> */}
+              <Avatar sx={{ bgcolor: 'deepOrange' }}>N</Avatar>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
