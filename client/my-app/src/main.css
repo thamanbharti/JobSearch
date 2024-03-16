@@ -77,7 +77,7 @@
  overflow-y: scroll;
  scroll-behavior: smooth;
  align-items: center;
- box-shadow: 0 4px 8px purple;
+ box-shadow: 0px 0px 24px #5C5696;
 }
   
   @keyframes appear {

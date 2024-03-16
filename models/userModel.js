@@ -20,6 +20,13 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'password is required']
     },
+    FirstTime:{
+        type:Boolean,
+    },
+    Interest:{
+        type:[String],
+        required:[true,'Interest is required']
+    }
 
     // phone: {
     //     type: String,

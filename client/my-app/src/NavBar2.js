@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { GiNotebook } from "react-icons/gi";
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
@@ -11,14 +12,16 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import { FaGlobeAmericas } from "react-icons/fa";
-
 import Menu from '@mui/material/Menu';
 import { useNavigate } from 'react-router-dom';
+import { GiSkills } from "react-icons/gi";
+
 
 export default function NavBar2() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
- const navigate=useNavigate();
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
@@ -28,13 +31,11 @@ export default function NavBar2() {
   };
 
   const handleClose = () => {
-
     setAnchorEl(null);
   };
 
   return (
-    <Box sx={{ flexGrow: 1 ,position:'sticky'}}>
-      
+    <Box sx={{ flexGrow: 1, position: 'sticky' }}>
       <AppBar position="static">
         <Toolbar>
           <IconButton
@@ -47,10 +48,21 @@ export default function NavBar2() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          CareerGrow{' '}<FaGlobeAmericas color='purple'/>
+            CareerGrow <FaGlobeAmericas color='purple'/>
           </Typography>
           {auth && (
             <div>
+              <IconButton>
+              <GiSkills color='white' onClick={()=>navigate('/skilltest')}/>
+              </IconButton>
+
+               <IconButton
+                size="large"
+                aria-label="show 17 new notifications"
+                color="inherit"
+              >
+                <GiNotebook size={24} onClick={() => navigate('/interest')} />
+              </IconButton>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -59,7 +71,7 @@ export default function NavBar2() {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+                <AccountCircle size={23}/>
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -79,6 +91,7 @@ export default function NavBar2() {
                 <MenuItem onClick={handleClose}><u onClick={()=>navigate('/profile')}>Profile</u></MenuItem>
                 <MenuItem onClick={handleClose}><u onClick={()=>navigate('/main')}>Home</u></MenuItem>
               </Menu>
+             
             </div>
           )}
         </Toolbar>

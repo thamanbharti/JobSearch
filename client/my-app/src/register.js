@@ -11,7 +11,8 @@ export default function Register() {
   const [userDetails, setUser] = useState({
     username: "",
     email: "",
-    password: ""
+    password: "",
+    FirstTime:true,
   });
 
   const [isLoading, setLoading] = useState(false);
@@ -42,7 +43,7 @@ export default function Register() {
       })
       .catch((err) => {
         console.error(err);
-        // setError("Registration failed. Please try again."); // Set error state
+        
       })
       .finally(() => {
         setLoading(false);

@@ -6,6 +6,7 @@ import { PiGlobeStandFill } from "react-icons/pi";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { BsPersonWorkspace } from "react-icons/bs";
 import Button from '@mui/material/Button';
+import { BottomNavigation } from '@mui/material';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import './home.css'
 
@@ -26,10 +27,12 @@ export default function Home() {
         </div>
         <div className='card-container'>
             <div className='card'>
+            <div class="partition"></div>
             <BsPersonWorkspace size={50} style={{marginLeft:'40%'}}/>
             <LoremIpsum avgWordsPerSentence={'4'} />
             </div>
             <div className='card'>
+              
             <GiSupersonicArrow size={50} style={{marginLeft:'40%'}}/>
             <LoremIpsum avgWordsPerSentence={'4'} />
             </div>
@@ -38,7 +41,10 @@ export default function Home() {
             <LoremIpsum avgWordsPerSentence={'4'} />
             </div>
         </div>
-        <p><h2><span style={{color:'white',fontSize:'50px'}}>Welcome to CareerGrow, your gateway to endless career opportunities!</span><br/><br/><span style={{marginTop:'50px',marginLeft:'60px',display:'block',fontSize:'30px',color:'white'}}>Finding the perfect job shouldn't feel like searching for a needle in a haystack.<br/> At CareerGrow, we believe that every professional deserves a fulfilling career that aligns with their skills, passions, and ambitions. That's why we've created a platform that connects talented individuals with top companies, making the job search process smoother, smarter, and more rewarding than ever before.</span></h2></p>
+        <footer className="footer">
+      <p>&copy; 2024 |  CareerGrow  All rights reserved</p>
+      <p>Designed by <a href="#">Your Name</a></p>
+    </footer>
     </div>
   )
 }

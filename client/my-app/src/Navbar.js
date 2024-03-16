@@ -4,6 +4,7 @@ import AppBar from '@mui/material/AppBar';
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
+import { GiNotebook } from "react-icons/gi";
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
@@ -152,6 +153,7 @@ export default function NavBar({filterdata}) {
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
+     
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
@@ -232,6 +234,14 @@ export default function NavBar({filterdata}) {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            <IconButton   size="large"
+          aria-label="show 17 new notifications"
+          color="inherit">
+            <Badge>
+            <GiNotebook onClick={()=>navigate('/interest')}/>
+            </Badge>
+      
+      </IconButton>
             <IconButton
               size="large"
               edge="end"
@@ -241,6 +251,7 @@ export default function NavBar({filterdata}) {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
+
               {/* <AccountCircle /> */}
               <Avatar sx={{ bgcolor: 'deepOrange' }}>N</Avatar>
             </IconButton>

@@ -109,4 +109,26 @@ const currentUserController = async (req, res) => {
     }
 };
 
-module.exports = { registerController, loginController, currentUserController };
+const updateCurrentUserController=async (req,res)=>{
+    try{
+          const userId=req.params.userId;
+          const interest=req.body;
+          console.log(interest)
+         const updatedData =await userModel.findByIdAndUpdate(userId,{FirstTime:false,Interest:interest.Interest});
+         console.log(updatedData)
+          return res.status(200).send({
+            success: true,
+            message:"FirstTime Login Updated"
+            
+          })
+    } catch(error){
+        console.log(error)
+        return res.status(500).send({
+            success: false,
+            message: "unable to get current user",
+            error
+        })
+    }
+}
+
+module.exports = { registerController, loginController, currentUserController,updateCurrentUserController };

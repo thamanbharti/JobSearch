@@ -5,7 +5,9 @@ import NavBar from './Navbar';
 import CircularProgress from '@mui/material/CircularProgress';
 import CheckIcon from './AnimatedcheckIcon';
 import NavBar2 from './NavBar2';
+import { useNavigate } from 'react-router-dom';
 export default function PostJob() {
+  const navigate=useNavigate();
     const [jobdetails,setJobdetails]=useState({
         company:"",
         eligibility:"",
@@ -41,7 +43,7 @@ export default function PostJob() {
      <div className='job-applicant'>
         <h2>Applicants</h2>
         <div  className='applicant-card'>
-          <h3>name</h3>
+          <h3 style={{cursor:'pointer'}} onClick={()=>{navigate('/profile')}}>name</h3>
           <button className='apply-button'>
             Download Resume
           </button>

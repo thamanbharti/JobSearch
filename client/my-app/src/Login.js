@@ -22,11 +22,14 @@ export default function Login() {
               console.log(res.data)
               const userId=res.data.user._id
               localStorage.setItem('userId',userId);
-              navigate('/main');
+              if(res.data.user.Interest.length===0)
+              {
+                navigate('/interest')
+              }else navigate('/main');
             }
             console.log(res.data);
           })
-
+          
            
      }
     

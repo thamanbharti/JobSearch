@@ -8,7 +8,12 @@
     border-radius: 5px;
     float: left;
     margin-left: 10px;
+    background-size: cover;
 }
+
+
+
+
 .card:hover{
     
     cursor: pointer;
@@ -54,7 +59,8 @@
     /* border: solid; */
     padding-left:140px ;
     margin-top: 60px;
-
+    
+    
 }
 
 .description{
@@ -62,3 +68,41 @@
     width: 100%;
     /* border: solid; */
 }
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    margin-right: 20px;
+  }
+  
+  .feature-text {
+    flex: 1;
+  }
+  
+  .feature h2 {
+    margin-top: 0;
+  }
+  
+  .feature p {
+    margin-bottom: 0;
+  }

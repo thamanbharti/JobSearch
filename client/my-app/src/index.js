@@ -12,6 +12,7 @@ import Main from './Main';
 import Profile from './Profile';
 import PostJob from './PostJob';
 import Company from './Company';
+import Test from './Test';
 
 const router=createBrowserRouter([{
   path:'/',
@@ -40,6 +41,10 @@ const router=createBrowserRouter([{
 {
   path:'/company',
   element:<Company/>
+},
+{
+  path:'/skilltest',
+  element:<Test/>
 }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
