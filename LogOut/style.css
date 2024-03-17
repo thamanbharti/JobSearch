@@ -1,0 +1,38 @@
+body{
+    background-color: skyblue;
+}
+#title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 49px;
+    color: grey;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   
+}
+#cg{
+    width: 15%;
+    height: 15%;
+    display: flex;
+    margin-left: 42%;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 93px;
+}
+#img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 42%;
+    border: none;
+    border-radius: 123px;
+}
+#small{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 77px;
+    font-size: 35px;
+}
