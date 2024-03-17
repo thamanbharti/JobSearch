@@ -3,6 +3,7 @@
 const userModel = require("../models/userModel");
 const applicationModel = require("../models/applicationModel");
 const resumeUploadModel = require("../models/resumeUploadModel");
+const notificationModel = require("../models/notificationModel");
 
 //CREATE INVENTORY
 const createApplicationController = async (req, res) => {

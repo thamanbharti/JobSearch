@@ -1,6 +1,7 @@
 const userModel = require("../models/userModel");
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const interestModel = require("../models/interestModel");
 const registerController = async (req, res) => {
     try {
         const exisitingUser = await userModel.findOne({ email: req.body.email })
@@ -31,6 +32,28 @@ const registerController = async (req, res) => {
         res.status(500).send({
             success: false,
             message: "errors in register API",
+            error,
+        })
+    }
+}
+//store the interest of user
+
+const interestController = async (req, res) => {
+    try {
+
+        const interest = new interestModel(req.body)
+        await interest.save();
+        return res.status(201).send({
+            success: true,
+            message: 'users interst store  Succesfully',
+
+        })
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: "errors in interst API",
             error,
         })
     }
@@ -109,4 +132,4 @@ const currentUserController = async (req, res) => {
 
 // get resume 
 
-module.exports = { registerController, loginController, currentUserController };
+module.exports = { registerController, loginController, currentUserController, interestController };
