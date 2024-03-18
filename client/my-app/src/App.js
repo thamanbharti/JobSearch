@@ -8,11 +8,13 @@ import NavBar from './Navbar';
 import Upload from './Upload';
 import Profile from './Profile';
 import CheckIcon from './AnimatedcheckIcon';
+import Chat from './chat';
 
 function App() {
   return (
     <div className="App">
-      <Home/>
+      {/* <Home/> */}
+      <Chat/>
       {/* <CheckIcon/> */}
       {/* <Profile/> */}
       {/* <Upload/> */}

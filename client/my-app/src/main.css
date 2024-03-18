@@ -1,133 +1,74 @@
-
-
-.search-bar{
-    /* float: right; */
-    width: 50vw;
-    height: 6vh;
-   margin-left: 11vw;
-    border-radius: 5px;
-    color: purple;
-    font-weight: bold;
-    font-size: large;
-    position: fixed;
-    z-index: 100;
-}
-.search-bar:hover{
-    animation: enlarge  1s 1 ;
-    cursor: pointer;
+.search-bar {
+  width: 90%; /* Adjusted width for smaller screens */
+  margin: 0 auto; /* Center the search bar */
+  height: 6vh;
+  border-radius: 5px;
+  color: purple;
+  font-weight: bold;
+  font-size: large;
+  position: fixed;
+  z-index: 100;
+  top: 0; /* Stick to the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
 }
 
-@keyframes enlarge {
-    0%{
-        transform: translateY(2px) scale(1);
-    }
-    100%{
-        transform: 
-       translateY(0) scale(1.01);
-    }
-}
-.logo-sec{
-    width: max-content;
-    position: relative;
-    float: right; 
-     margin-right: 15vw;
-   align-items: center;
+.logo-sec {
+  width: max-content;
+  position: relative;
+  float: right; 
+  margin-right: 5%; /* Adjusted margin for smaller screens */
+  align-items: center;
 }
 
 .filter-box {
-    border: solid;
-    width: 50vw;
-    border-width: 2px;
-    border-radius: 3px;
-    margin-top: 5px;
-    margin-left: 28.5vw;
-    transform: translateX(28.5vw);
-    list-style-type: none;
-    background-color: aliceblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    z-index: 103;
-    height: max-content;
-    animation: appear 1s forwards;
+  width: 90%; 
+  margin: 50px auto;
+  list-style-type: none;
+  background-color: aliceblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 20000;
+  padding: 10px; 
+  box-sizing: border-box; 
 }
 
-.job-card{
-  border: solid;
-  max-width: 48vw;
-  min-height: 20vh;
-  border-width: 1px;
-  border-radius: 3px;
-  margin-top: 5px;
-  padding: 2px 2px 2px;
- /* transform: translateX(29vw); */
-  /* z-index: -1; */
+.job-card {
+  width: 90%; /* Adjusted width for smaller screens */
+  margin: 10px auto; /* Center the job cards */
+  padding: 10px; /* Added padding */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- 
 }
 
-.card-container-1{
- transform: translateX(28.5vw);
- width: 50vw;
- padding-left: 4px;
- margin-top: 10px;
- /* border: solid; */
- background-color: whitesmoke;
- height: 100vh;
- border-radius: 2px;
- position:absolute;
- overflow-y: scroll;
- scroll-behavior: smooth;
- align-items: center;
- box-shadow: 0px 0px 24px #5C5696;
+.card-container-1 {
+  width: 90%; /* Adjusted width for responsiveness */
+  margin-left: 70px ; /* Adjusted top margin to provide space for filter-box */
+  padding: 10px; /* Added padding */
+  box-sizing: border-box; /* Include padding in width calculation */
+   /* Fill remaining height */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  background-color: whitesmoke;
+  border-radius: 2px;
+  box-shadow: 0px 0px 24px #5C5696;
 }
-  
-  @keyframes appear {
-    0% {
-      
-      transform: translateY(5px) scale(0.9); /* Initial state: slightly scaled and invisible */
-    }
-    100% {
-      /* opacity: 1; */
-      
-      transform: translateY(0) scale(1); /* Final state: fully visible and normal scale */
-    }
-  }
-  
-  
-  .icon {
-    margin-right: 15px;
+
+
+.apply-button {
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .search-bar, .filter-box, .job-card, .card-container-1 {
+      width: 90%;
   }
 
-  .details {
-    flex: 1;
+  .logo-sec {
+      margin-right: 5%;
   }
-
-  .company-info {
-    display: flex;
-    align-items: center;
-  }
-
-  .company-name {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-
-  .job-role {
-    font-size: 1.1em;
-    margin-top: 5px;
-  }
-
-  .job-description {
-    margin-top: 10px;
-  }
-
-  .apply-button {
-    margin-top: 10px;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transform: translateX(5px);
-  }
- 
+}

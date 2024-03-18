@@ -25,7 +25,7 @@ console.log(favData)
     <div>
 
 <NavBar2/>
-<div className='job-card' style={{transform:'translateX(29vw)'}}>
+<div className='job-card' style={{backgroundColor:'white'}}>
      
      <div className="details">
  

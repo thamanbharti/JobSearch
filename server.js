@@ -23,7 +23,12 @@ app.use("/api/v1/test", require("./routes/testRoutes"));
 app.use("/api/v1/auth", require("./routes/authRoutes"));
 app.use("/api/v1/auth", require("./routes/FavouriteRoute"));
 app.use("/api/v1/auth",require("./routes/skilltestRoute"));
-//port 
+app.use("/api/v1", require("./routes/resumeUploadRoutes"));
+app.use('/api/v1/application',require("./routes/applicationRoutes"))
+app.use('api/v1/skilltest',require('./routes/skilltestRoute'))
+
+
+
 const PORT = 8080
 //listen
 app.listen(PORT, () => {

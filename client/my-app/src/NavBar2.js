@@ -3,32 +3,29 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { GiNotebook } from "react-icons/gi";
+import { FaGlobeAmericas } from "react-icons/fa";
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
-import { FaGlobeAmericas } from "react-icons/fa";
+import { GiNotebook } from 'react-icons/gi';
 import Menu from '@mui/material/Menu';
 import { useNavigate } from 'react-router-dom';
 import { GiSkills } from "react-icons/gi";
-
+import { SiFormstack } from "react-icons/si";
+import { RiLogoutCircleFill } from "react-icons/ri";
 
 export default function NavBar2() {
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const navigate = useNavigate();
-
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+  const isRecruiter = localStorage.getItem('userType') === 'Recruiter';
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+  console.log(localStorage.getItem('userType'))
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -52,17 +49,28 @@ export default function NavBar2() {
           </Typography>
           {auth && (
             <div>
+              {!isRecruiter && (
+                <IconButton>
+                  <GiSkills color='white' onClick={() => navigate('/skilltest')}/>
+                </IconButton>
+              )}
               <IconButton>
-              <GiSkills color='white' onClick={()=>navigate('/skilltest')}/>
+                <SiFormstack color='white'/>
               </IconButton>
-
-               <IconButton
-                size="large"
-                aria-label="show 17 new notifications"
-                color="inherit"
-              >
-                <GiNotebook size={24} onClick={() => navigate('/interest')} />
+              <IconButton>
+              <IconButton>
+                  < RiLogoutCircleFill color='white' onClick={() => navigate('/logout')}/>
+                </IconButton>
               </IconButton>
+              {!isRecruiter && (
+                <IconButton
+                  size="large"
+                  aria-label="show 17 new notifications"
+                  color="inherit"
+                >
+                  <GiNotebook size={24} onClick={() => navigate('/interest')} />
+                </IconButton>
+              )}
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -88,10 +96,9 @@ export default function NavBar2() {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}><u onClick={()=>navigate('/profile')}>Profile</u></MenuItem>
-                <MenuItem onClick={handleClose}><u onClick={()=>navigate('/main')}>Home</u></MenuItem>
+                <MenuItem onClick={handleClose}><u onClick={() => navigate('/profile')}>Profile</u></MenuItem>
+                {!isRecruiter && <MenuItem onClick={handleClose}><u onClick={() => navigate('/main')}>Home</u></MenuItem>}
               </Menu>
-             
             </div>
           )}
         </Toolbar>

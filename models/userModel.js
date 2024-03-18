@@ -26,6 +26,9 @@ const userSchema = new mongoose.Schema({
     Interest:{
         type:[String],
         required:[true,'Interest is required']
+    },
+    userType:{
+        type:String,
     }
 
     // phone: {

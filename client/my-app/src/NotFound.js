@@ -1,5 +1,4 @@
 import React from 'react'
-import { FcEmptyTrash } from "react-icons/fc";
 export default function NotFound() {
   return (
     <div className='job-card' style={{backgroundImage:'url(https://cdni.iconscout.com/illustration/premium/thumb/sorry-item-not-found-3328225-2809510.png?f=webp)',height:'80vh',border:'none'}}>

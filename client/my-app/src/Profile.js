@@ -4,17 +4,32 @@ import { Avatar } from '@mui/material'
 import './profile.css'
 import axios from 'axios'
 import { MdOutlineFavoriteBorder,MdOutlineFavorite } from "react-icons/md";
-import { useLocation, useNavigate } from 'react-router-dom';
+import {  useLocation, useNavigate } from 'react-router-dom';
 import NavBar2 from './NavBar2';
 
 export default function Profile() {
   const navigate=useNavigate();
   const location=useLocation();
   const [favtData,setfavData]=useState([]);
+  const [Recruiter,Validate]=useState(false);
+  const [user,setUser]=useState({
+    username:"",
+    email:""
+  });
+  const [error, setError] = useState(null);
   // console.log(location.state)
- 
+   
+      
   useEffect(()=>{
-            const userId=localStorage.getItem('userId');
+    JSON.parse(localStorage.getItem('userCredential'))
+    setUser({
+      username: JSON.parse(localStorage.getItem('userCredential')).username,
+      email: JSON.parse(localStorage.getItem('userCredential')).email
+    });
+    const userId=JSON.parse(localStorage.getItem('userCredential'))._id;
+         
+            Validate(Recruiter===localStorage.getItem('userType'))
+            
 
           axios.get(`http://localhost:8080/api/v1/auth/get-favourite/${userId}`)
           .then((res)=>{
@@ -33,10 +48,9 @@ export default function Profile() {
           
   },[])
 
-  console.log(favtData)
+  
    
     const [show,setShow]=useState(false);
-    const [isrecruiter,Validate]=useState(false);
   return (
     <div>
         {/* <NavBar filterdata={filterdata}/> */}
@@ -47,14 +61,14 @@ export default function Profile() {
             </div>
             <div className='profile-lower'>
                 <span className='name'>Name</span>
-                <span className='edit-name'>UserName</span>
+                <span className='edit-name'>{user.username}</span>
                 <span className='name'>Email</span>
-                <span className='edit-name'>Email</span>
+                <span className='edit-name'>{user.email}</span>
                 
                  {
-                    !isrecruiter?<button className='fav' onClick={()=>setShow(!show)}>
-                    Favourites<MdOutlineFavorite color='red'/></button>:<button className='fav' onClick={()=>navigate('/postjob')}>
-                    PostJob</button>
+                    !Recruiter?(<button className='fav' onClick={()=>setShow(!show)}>
+                    Favourites<MdOutlineFavorite color='red'/></button>):(<button className='fav' onClick={()=>navigate('/postjob')}>
+                    PostJob</button>)
                  }
                 
                 

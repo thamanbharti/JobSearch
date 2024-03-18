@@ -13,6 +13,7 @@ import Profile from './Profile';
 import PostJob from './PostJob';
 import Company from './Company';
 import Test from './Test';
+import Logout from './logout';
 
 const router=createBrowserRouter([{
   path:'/',
@@ -45,6 +46,9 @@ const router=createBrowserRouter([{
 {
   path:'/skilltest',
   element:<Test/>
+},{
+  path:'/logout',
+  element:<Logout/>
 }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));

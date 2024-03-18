@@ -3,14 +3,18 @@ import './Test.css'
 import NavBar2 from './NavBar2'
 import axios from 'axios';
 import { MdTimer } from "react-icons/md";
+import MyTimer from './MyTimer';
+import { useTimer } from 'react-timer-hook';
 
 export default function Test() {
+  const time = new Date();
+  time.setSeconds(time.getSeconds() + 600);
   const list=[
     "WebDev","AppDev","ML","DataAnalyst"
 ]
     const [activeIndex,setActive]=useState(0);
 
-    axios.get(`http://localhost:8080/api/v1/auth/skilltest/${list[activeIndex]}`)
+    axios.get(`http://localhost:8080/api/v1/skilltest/${list[activeIndex]}`)
     .then((res)=>{
       console.log(res.data);
     })
@@ -60,7 +64,8 @@ export default function Test() {
                     ))
                 }
                 </div>
-                <button className='apply-button' style={{fontSize:'21'}}>StartTest&nbsp;<MdTimer size={18}/></button>
+                <button className='apply-button' style={{fontSize:'21'}}><MyTimer expiryTimestamp={time} /><MdTimer size={20} style={{marginLeft:'10vw'}}/></button>
+                
                 <div className='questions' >
                     
                 {questions.map(question => (

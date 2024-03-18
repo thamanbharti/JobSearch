@@ -5,7 +5,8 @@ const skillTestController=async (req,res)=>{
     try{
         const skill=req.params.skill;
         console.log(skill)
-        const skillTest= await skillTestModel.find({$or:[{ML:skill},{DataAnalyst:skill},{AppDev:skill},{WebDev:skill}]});
+        const skillTest= await skillTestModel.find({$or:[{skill:skill},{skill:skill},{skill:skill},{skill:skill}]});
+        console.log(skillTest)
         return res.status(200).send({
               success:true,
               message:"skill found according to req",
@@ -21,5 +22,7 @@ const skillTestController=async (req,res)=>{
          })
     }
 }
+
+
 
 module.exports=skillTestController;
