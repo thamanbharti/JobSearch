@@ -1,0 +1,68 @@
+.card {
+  height: 300px;
+  width: 250px;
+  box-shadow: 4px 2px rgb(73, 73, 73);
+  border-width: 2px;
+  background-color: white;
+  border-radius: 5px;
+  float: left;
+  margin-left: 10px;
+  background-size: cover;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:nth-child(1) {
+  margin-left: 10px;
+  animation: move 2s 0s 2 ;
+}
+
+.card:nth-child(2) {
+  margin-left: 10px;
+  margin-top: 40px;
+  animation: move 2s 4s 2;
+}
+
+.card:nth-child(3) {
+  margin-left: 10px;
+  animation: move 2s 8s 2;
+}
+
+.card-container {
+  height: 400px;
+  margin-left: 10%;
+  width: 80%;
+  padding-left: 140px;
+  margin-top: 60px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto; /* Ensures the footer sticks to the bottom */
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@keyframes move {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+       transform: translateY(20px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}

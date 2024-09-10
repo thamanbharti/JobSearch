@@ -1,0 +1,30 @@
+.fields{
+    height: 95vh;
+    width: 40vw;
+    box-shadow: 0px 0px 24px #5C5696;
+    border-width: 2px;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 30%;
+    padding-left: 20px;
+    padding-top: 80px;
+    margin-top: 5vh;
+}
+li{
+   text-align: center;
+}
+.field-1{
+    border: solid; 
+     width: 15vw;
+    height: 8vh; 
+    box-shadow: 0px 0px 24px #5C5696; /* Enhanced box shadow */
+    border-width: 2px; 
+    background-color: white;
+     border-radius: 5px;
+    float: right;
+    margin-right: 40px;
+    list-style: none;
+    margin-top: 10px;
+}
+
+

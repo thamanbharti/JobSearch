@@ -1,0 +1,76 @@
+/* Basic styling for the profile container */
+.profile-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.profile-header {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Message section styling */
+.message-section {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.message-section h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.message-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
+
+.message-error {
+    color: red;
+    margin-top: 10px;
+}
+
+.message-success {
+    color: green;
+    margin-top: 10px;
+}
+
+/* Loading and error messages styling */
+.loading, .error {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+}
